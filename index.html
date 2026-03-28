@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Notes App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>☁ Cloud Notes App</h1>
+    <p class="subtitle">Login and save your personal notes</p>
+
+    <div class="top-bar">
+      <button id="themeToggle" class="small-btn">🌙 Dark Mode</button>
+    </div>
+
+    <div id="authSection">
+      <input type="email" id="email" placeholder="Enter email">
+      <input type="password" id="password" placeholder="Enter password">
+
+      <div class="auth-buttons">
+        <button id="signupBtn">Sign Up</button>
+        <button id="loginBtn">Login</button>
+      </div>
+    </div>
+
+    <div id="noteSection" style="display: none;">
+      <p id="welcomeText" class="welcome-text"></p>
+      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+      <button id="addBtn">Add Note</button>
+      <div class="top-actions">
+        <a href="notes.html" class="back-link">View Saved Notes</a>
+        <button id="logoutBtn" class="small-btn logout-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
