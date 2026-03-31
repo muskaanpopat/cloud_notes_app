@@ -1,40 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Notes App</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>☁ Cloud Notes App</h1>
-    <p class="subtitle">Login and save your personal notes</p>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
 
-    <div class="top-bar">
-      <button id="themeToggle" class="small-btn">🌙 Dark Mode</button>
-    </div>
-
-    <div id="authSection">
-      <input type="email" id="email" placeholder="Enter email">
-      <input type="password" id="password" placeholder="Enter password">
-
-      <div class="auth-buttons">
-        <button id="signupBtn">Sign Up</button>
-        <button id="loginBtn">Login</button>
+  <div class="app-shell">
+    <div class="container glass">
+      <div class="header">
+        <div>
+          <h1>☁ Cloud Notes</h1>
+          <p class="subtitle">Securely save and manage your personal notes in the cloud</p>
+        </div>
+        <button id="themeToggle" class="small-btn secondary-btn">🌙 Dark Mode</button>
       </div>
-    </div>
 
-    <div id="noteSection" style="display: none;">
-      <p id="welcomeText" class="welcome-text"></p>
-      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
-      <button id="addBtn">Add Note</button>
-      <div class="top-actions">
-        <a href="notes.html" class="back-link">View Saved Notes</a>
-        <button id="logoutBtn" class="small-btn logout-btn">Logout</button>
+      <div class="hero-card">
+        <div class="hero-icon">📝</div>
+        <div>
+          <h2>Your Smart Notes Space</h2>
+          <p>Write, organize, pin, search, and save notes with reminders and categories.</p>
+        </div>
+      </div>
+
+      <div id="authSection" class="section-card">
+        <h3 class="section-title">Login / Sign Up</h3>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+        </div>
+
+        <div class="auth-buttons">
+          <button id="signupBtn" class="primary-btn">Create Account</button>
+          <button id="loginBtn" class="secondary-btn">Login</button>
+        </div>
+      </div>
+
+      <div id="noteSection" class="section-card" style="display: none;">
+        <div class="welcome-box">
+          <div>
+            <p class="mini-label">Logged in as</p>
+            <p id="welcomeText" class="welcome-text"></p>
+          </div>
+          <div class="user-badge">👤</div>
+        </div>
+
+        <h3 class="section-title">Create a New Note</h3>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="noteTitle">Title</label>
+            <input type="text" id="noteTitle" placeholder="Enter note title" />
+          </div>
+
+          <div class="input-group">
+            <label for="noteCategory">Category</label>
+            <select id="noteCategory">
+              <option value="Personal">Personal</option>
+              <option value="Study">Study</option>
+              <option value="Work">Work</option>
+              <option value="Ideas">Ideas</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="noteInput">Your Note</label>
+          <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+        </div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="noteReminder">Reminder Date & Time</label>
+            <input type="datetime-local" id="noteReminder" />
+          </div>
+
+          <div class="input-group checkbox-group">
+            <label>Important</label>
+            <div class="check-card">
+              <input type="checkbox" id="notePinned" />
+              <label for="notePinned">⭐ Pin this note</label>
+            </div>
+          </div>
+        </div>
+
+        <button id="addBtn" class="primary-btn">➕ Add Note</button>
+
+        <div class="top-actions">
+          <a href="notes.html" class="back-link">📂 View Saved Notes</a>
+          <button id="logoutBtn" class="small-btn danger-btn">Logout</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <div id="toastContainer" class="toast-container"></div>
 
   <script type="module" src="script.js"></script>
 </body>
